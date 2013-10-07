@@ -1,0 +1,145 @@
+body {
+    background: #555;
+}
+div {
+    background: white;
+}
+.explenationText {
+    display : none;
+}
+.floatBox {
+    border: 2px outset;
+    height: 90%;
+    width: 500px;
+    position: fixed;
+    top: 5%;
+    left: 150px;
+    background: white;
+    overflow: auto;
+}
+.closeButton {
+    text-align: center;
+    border: 1px outset;
+    position: fixed;
+    top: 5%;
+    left: 610px;
+    background: #aaa;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+.inputText {
+    border: 2px inset;
+    height: 100px;
+    left: 5px;
+    position: absolute;
+    top: 365px;
+    width: 500px;
+}
+.parameterBox {
+    border: 2px inset;
+    height: 100px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 500px;
+}
+.textBox {
+    border: 2px inset;
+    height: 250px;
+    left: 5px;
+    position: absolute;
+    top: 110px;
+    width: 500px;
+    overflow: auto;
+}
+.radioBox {
+    border: 1px inset;
+    float: left;
+    height: 90px;
+    left: 2px;
+    position: relative;
+    top: 5px;
+    width: 70px;
+}
+.statBox {
+    border: 1px inset;
+    float: left;
+    height: 70px;
+    left: 2px;
+    position: relative;
+    top: 5px;
+    width: 105px;
+}
+.emotionBox {
+    border: 1px inset;
+    float: left;
+    height: 70px;
+    left: 2px;
+    position: relative;
+    top: 5px;
+    width: 80px;
+}
+.characterBox {
+    border: 2px inset;
+    height: 465;
+    left: 510px;
+    position: absolute;
+    top: 5px;
+    width: 113px;
+}
+.statText {
+    position: absolute;
+    right: 1px;
+    width: 40px;
+}
+.output {
+    border: 2px inset;
+    height: 250px;
+    left: 630px;
+    position: absolute;
+    top: 110px;
+    width: 445px;
+    overflow: auto;
+}
+#buttonBox {
+    position: absolute;
+    background: inherit;
+    top: 470px;
+    left: 5px;
+}
+.nextButton {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    float: left;
+}
+#finalButton {
+    top: 5px;
+    left: 630px;
+    position: absolute;
+}
+.infoButton {
+    float: top;
+    position: relative;
+    top: 21%;
+    left: 10px;
+}
+.explenationButton {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    background-color: gray;
+    height: 15px;
+    width: 15px;
+    float: right;
+    top:0;
+    right:0;
+}
+pinky {
+    color: #e67fdb;
+    display : block;
+}

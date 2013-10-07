@@ -1,0 +1,267 @@
+<html>
+    <head>
+        <script type="application/javascript" src="DAGFiles/jQuery.js"></script>
+        <script type="application/javascript" src="DAGFiles/dialogueBuilderJSON.js"></script>
+       
+        
+        <link rel="stylesheet" type="text/css" href="DAGFiles/dagStyle.css">
+    </head>
+    
+    <body>
+        
+        <div class="parameterBox">
+            <div class="radioBox" align="left">
+                Twilight
+                <br>
+                <input type="radio" name="twiKid" value="true"> Bound<br>
+                <input type="radio" name="twiKid" value="null" checked> N/A<br>
+                <input type="radio" name="twiKid" value="false"> Free
+            </div>
+            <div class="radioBox" align="left">
+                AppleJack
+                <br>
+                <input type="radio" name="appKid" value="true"> Bound<br>
+                <input type="radio" name="appKid" value="null" checked> N/A<br>
+                <input type="radio" name="appKid" value="false"> Free
+            </div>
+            <div class="radioBox" align="left">
+                Fluttershy
+                <br>
+                <input type="radio" name="fluKid" value="true"> Bound<br>
+                <input type="radio" name="fluKid" value="null" checked> N/A<br>
+                <input type="radio" name="fluKid" value="false"> Free
+            </div>
+            <div class="radioBox" align="left">
+                R.Dash
+                <br>
+                <input type="radio" name="dasKid" value="true"> Bound<br>
+                <input type="radio" name="dasKid" value="null" checked> N/A<br>
+                <input type="radio" name="dasKid" value="false"> Free
+            </div>
+            <div class="radioBox" align="left">
+                Rarity <div class="explenationButton" id="expParameters">E</div>
+                <br>
+                <input type="radio" name="rarKid" value="true"> Bound<br>
+                <input type="radio" name="rarKid" value="null" checked> N/A<br>
+                <input type="radio" name="rarKid" value="false"> Free
+        </div>
+            <input type="button" class="infoButton" value="Briefing"></input>
+            <input type="button" class="infoButton" value="Tips"></input>
+            <input type="button" class="infoButton" value="Requirments"></input>
+        </div>
+        <div class="characterBox">
+            <div class="statBox" align="left">
+                Character <div class="explenationButton" id="expCharacter">E</div>
+                <select id="character">
+                    <option></option>
+                    <option>twilight</option>
+                    <option>applejack</option>
+                    <option>fluttershy</option>
+                    <option>rainbowdash</option>
+                    <option>rarity</option>
+                    <option>trixie</option>
+                    <option>braebern</option>
+                    <option>zecora</option>
+                </select>
+            </div>
+            <div class="statBox">
+                Health <div class="explenationButton" id="expHealth">E</div>
+                <br>
+                max<input class="statText" id="maxHealth" value=100 /><br>
+                min<input class="statText" id="minHealth" value=0 /><br>
+            </div>
+            <div class="statBox">
+                Psychi <div class="explenationButton" id="expPsychi">E</div>
+                <br>
+                max<input class="statText" id="maxPsychi" value=100 /><br>
+                min<input class="statText" id="minPsychi" value=0 /><br>
+            </div>
+            <div class="statBox">
+                Stockholm <div class="explenationButton" id="expStockholm">E</div>
+                <br>
+                max<input class="statText" id="maxStock" value=100 /><br>
+                min<input class="statText" id="minStock" value=0 /><br>
+            </div>
+            <div class ="statBox">
+                Emotion <div class="explenationButton" id="expEmotion">E</div>
+                <br>
+                <select id="emotion">
+                    <option></option>
+                    <option>neutral</option>
+                    <option>blank</option>
+                    <option>happy</option>
+                    <option>jubilent</option>
+                    <option>sad</option>
+                    <option>depressed</option>
+                    <option>angry</option>
+                    <option>enraged</option>
+                    <option>scared</option>
+                    <option>terrified</option>
+                    <option>aroused</option>
+                    <option>horny</option>
+                    <option>dazed</option>
+                    <option>hysterical</option>
+                </select>
+            </div>
+        </div>
+        <div class="textBox">**Begin with typing the opening line. Then press "Next" to begin typing responses to it.**</div>
+        <textarea class="inputText" placeholder="Type here"></textarea>
+        <div class="output"></div>
+        <div id="buttonBox">
+            <input class="nextButton" id="addResponse" type="button" value="Another Response"/>
+            <input class="nextButton" id="nextStep" type="button" value="Next Step"/>
+        </div>
+        <input type="button" value="Finalize" id="finalButton"/>
+        <div class="floatBox"><noscript>You need to enable javascript</noscript><br>
+            You may be blocking the jQuery plug-in if you're reading this.
+        </div>
+<div id="parameterString" class="explenationText"><b>Capture Status:</b><br>
+    The buttons in these boxes determine if your dialogue will appear based on 
+    who has or hasn't been kidnapped yet. For instance: If you set Rarity to 'Free' 
+    your dialogue will only appear if Rarity hasn't been kidnapped. Useful for 
+    Dialogue which refernces her in some way. Like if Fluttershy were to say:<br>
+    <i>Oh I just spoke with Rarity. She says she's very purple.</i><br>
+    You'd only want that conversation to appear while Rarity is available to be talked 
+    to. If however you want to reference how Rarity is missing. Like:<br>
+    <i>Gee I wonder what happened to Rarity?</i><br>
+    You'd want her to be set to Bound.<br>Set it to 'Null' when it doesn't matter,
+    for instance if the dialogue doesn't reference them.<br>
+    Remember that this also applies to the Pony talking, and the pony speaking MUST 
+    be set to either 'Free' or 'Bound'</div>
+    
+    <div id=characterString class="explenationText"><b>Character:</b><br>
+    This is the character who will speak this dialogue. It is their stats referenced 
+    in the boxes below. Remember to set their capture status to either Bound or Free.</div>
+
+    <div id=healthString class="explenationText"><b>Health:</b><br>
+    This is the range of health that your dialogue will appear within. 
+    Meaning that if the character's health is above the maximum or below the minimum 
+    the conversation will not be available for selection.<br>
+    Make your conversation contextual to your selection. If they're health is low 
+    make their conversation about how sick they feel or perhaps pleading to go to a 
+    doctor. 50 is considered to be 'normal' while <26 is considered sick, and 
+    >74 is considered to be very healthy.<br>
+    Remember that Free ponies' health is always 50. If your conversation excludes 
+    50 while they're free your conversation will never appear.</div>
+    
+<div id=psychiString class="explenationText">"<b>Psychi:</b><br>
+    This is the range of psychi that your dialogue will appear within. 
+    Meaning that if the character's psychi is above the maximum or below the minimum 
+    the conversation will not be available for selection.<br>
+    Make your conversation contextual to your selection. If they're psychi is low 
+    make their conversation crazy or nonsensical. The exact nature of their psychosis 
+    is up to you. 50 is considered to be 'normal' while <26 is considered crazy, and 
+    >74 is considered to be...I don't know "really sane".<br>
+    Remember that Free ponies' psychi is always 50. If your conversation excludes 
+    50 while they're free your conversation will never appear.</div>
+    
+<div id=stockholmString class="explenationText">"<b>Stockholm:</b><br>
+    This is the range of Stockholm syndrome that your dialogue will appear within. 
+    Meaning that if the character's Stockholm is above the maximum or below the minimum 
+    the conversation will not be available for selection.<br>
+    Make your conversation contextual to your selection. If they're Stockholm is low 
+    make their conversation about how they want to escape. The Stockhom stat is 
+    different from health and psychi. First it builds really slowly. Second, 50 is not 
+    considered to be 'normal' 0 is. The Stockholm stat is more like a percent of how 
+    much they want to stay with you. On the low end your captive should only want 
+    to leave. On the high she should be accepting that she isn't. In the middle 
+    it could be that your relationship is strained but cordial. Extreme values on 
+    the stockholm stat will be scrutinized very closely for consideration.<br>
+    Remember that Free ponies' Stockholm is always 0. If your conversation excludes 
+    0 while they're free your conversation will never appear.</div>
+    
+<div id=emotionString class="explenationText">"<b>Emotion:</b></br>
+    This determines the expression on the character's portrait during this conversation.</div>
+
+<div id=briefString class="explenationText">'<b>What to do:</b><br>
+    Here's what's going on. This page is a tool for building 'Conversations'. 
+    A conversation, as far as the game is concerned, is a game entity that 
+    contains a branching path of dialogue. Each junction in the path is something 
+    the character says, and from there each of your responses is a possible path 
+    to take to the next set of dialogue.<br><br>
+    The way this works is that in the game you have the option to speak with the
+     characters you meet. When you select that option the game randomly selects 
+    a conversation with truthful <b>parameters</b> and displays it. 
+    Here you can write dialogue, and the possible responses. Then you set the parameters,
+    and finally hit 'Finalize' and the resulting code can be put into the game.
+    <br><br><b>Parameters</b> are what the game checks to see if your conversation is valid. 
+    The top set of radio buttons determines whether or not a particular character has been 
+    kidnapped by you, as PinkiePie. The column of figures on the right side are for 
+    the character who will be speaking. Their name, the maximum and minimum 
+    health/psychi/stockholm syndrome that character must have for your conversation to appear. 
+    The <span style="background-color:grey;color:white;">&nbspE&nbsp</span> buttons
+    go more in depth into each parameter.<br><br>
+    
+    I've tried to make this as user friendly as possible and littered it with
+    tons of help documentations, but if I still managed to make this too complicated
+    to use please let me know what doesn't make sense so I can fix it.
+    </div>
+
+<div id=tipsString class="explenationText">'<b>Some tips:</b><br><br>
+    When you have reached the end of a particular line of conversation press 
+    "Close Branch" without entering any responses and it will loop back to the next 
+    peice of dialogue with no responses.<br><br>
+    
+    Narrow stat margins open up the possibility for highly contextual dialogue. 
+    Wide state margins make your dialogue more likely to appear. If your conversation is
+    very general go ahead and give it wide margins, but context sensitive narrow margin dialogue
+    is bound to be more interesting.<br><br>
+    
+    Character states set to "bound" means this dialogue will only appear when 
+    that character has been kidnapped. Free is only if they are free, and "null" 
+    is for if it does not matter. Something such as "<i>Applejack has been missing</i>" 
+    should only appear if Applejack has been captured. Something like 
+    "<i>I went swimming with Applejack yesturday</i>" should only be said when applejack is free.<br><br>
+    
+    If your dialogue is too long to fit into the box, write as much as you can 
+    then add 'cont...' as it's only response and continue in the next module<br><br>
+    
+    The text in the response buttons is limited and meant more as the "idea" of
+    what Pinky is saying rather than what she's actually saying. But if you want her 
+    say something specific type it into the dialogue with '&ltpinky>' at the beginning
+    of her words, and '&lt/pinky>' at the end. Words in the 'pinky tags' will appear
+    as her dialogue and not the NPC's<br><br>
+    
+    The tool will remind you what dialogue was just spoken so you know what responses to type,
+    but there are bound to be vague lines, like if all they're saying is "<i>No.</i>",
+    so it might be a good idea to write down the context for your vague dialogue modules.<br><br>
+    
+    When a pony that can be kidnapped has not yet been kidnapped their health and
+    psychi are always at 50 and their stockholm is always 0. If you choose to make a dialogue
+    that is spoken when the character is free, but excludes those default stats, then you
+    guarentee that your conversation will never take place. You might as well leave 
+    the parameters at default in this case.<br><br>
+    </div>
+
+<div id=reqString class="explenationText"><B>All conversations must have the following:</b><br><br>
+    The speaking character must have their status set to either Free or Bound.<br><br>
+    No profanity. This sure isn't a family game, but bad words just don't jive with the 
+    intended feel of the game. Explicit descriptions of sex acts or genitalia are OK.<br><br> 
+    
+    While dialogue that references the results of other dialogues would be really cool 
+    it is also too complicated for this particular game. Conversations are chosen at 
+    random within the defined parameters. Any dialogue that references other dialogue 
+    will surely be seen out of order.<br><br>
+    
+    The game will not be referencing any major plot points in the show. Assume this 
+    game takes place in the middle of season 2, but really the game is not meant to 
+    coincide with the show's timeline.<br><br>
+    
+    Clearly indicate for whome the dialogue belongs.
+    If you found this builder in a thread somewhere and it has died you can e-mail 
+    your submission to '<b>zst.xkn@gmail.com</b>' put 'mlp_cim' in the subject line 
+    to ensure your submission gets seen.<br><br>
+    Ultimetaly submissions are only chosen if I like them. If they're clever, funny, 
+    or interesting then they'll probably get selected. I really can't imagine there being 
+    a limit to the number of dialogue options so unless I really hate your 
+    submission it'll probably get picked<br><br>
+    
+    If you're <i>really</i> interested in being involved in the game feel free 
+    to ask me if there's anything you can do. Collecting sound effects, limited 
+    voice work, and <i>maybe</i> OC cameos are all low skill things I need that 
+    anyone could do. Aside from that some static artwork and flash animations are
+    </body>
+    
+    
+    
+</html>
