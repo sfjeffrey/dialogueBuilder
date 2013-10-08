@@ -1,0 +1,66 @@
+html {
+    text-align:center;
+    background-color: #99c;
+}
+body {
+    border-left-style: solid;
+    border-right-style: solid;
+    padding: 5px;
+    position:relative;
+    left: 20%;
+    top:53px;
+    background: #ccf;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align:center;
+    width: 60%;
+}
+a:link {
+    color:#00a;
+    text-decoration:none;
+}
+a:visited {
+    color:#a00;
+    text-decoration:none;
+}
+.quickLinks {
+    vertical-align:middle;
+    position:fixed;
+    border-style:solid;
+    border-width:3px;
+    top:0;
+    padding:12px;
+    width:80%;
+    left:10%;
+    background:#aad;
+}
+
+.button {
+    color:white;
+    display:inline-block;
+    vertical-align:middle;
+    border-style:solid;
+    width:125px;
+    height:25px;
+    top:5px;
+    text-align:center;
+    border-radius:50px;
+}
+
+.backButton {
+    color:white;
+    border-radius:10px;
+    vertical-align:middle;
+    text-align:center;
+    position:fixed;
+    background-color:#668;
+    top:1em;
+    right:1em;
+    width:5em;
+    height:2em;
+    content: "Back";
+}
+.backButton:before {
+    vertical-align:middle;
+    content:'Back';
+}
