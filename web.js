@@ -5,9 +5,15 @@ var sys = require("sys"),
     fs = require("fs");
 
 http.createServer(function(request, response) {
-    var uri = url.parse(request.url).pathname;
+    var urlPath = request.url;
+    if (urlPath === '/') {
+        urlPath = '/index.html';
+    }
+    var uri = url.parse(urlPath).pathname;
+
     var filename = path.join(process.cwd(), uri);
-    path.exists(filename, function(exists) {
+    fs.exists(filename, function(exists) {
+        console.log(filename);
         if(!exists) {
             response.writeHead(404, {"Content-Type": "text/plain"});
             response.end("404 Not Found");
@@ -17,8 +23,9 @@ http.createServer(function(request, response) {
         fs.readFile(filename, "binary", function(err, file) {
             if(err) {
                 response.writeHead(500, {"Content-Type": "text/plain"});
-                response.end(err + "n");
+                response.end(err + " : "+filename);
                 return;
+
             }
 
             response.writeHead(200);
@@ -27,4 +34,4 @@ http.createServer(function(request, response) {
     });
 	}).listen(8080);
 
-console.log("Server running at http://localhost:8080/");
+console.log("Server running at "+process.env.port);
