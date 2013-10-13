@@ -3,6 +3,9 @@ var sys = require("sys"),
     url = require("url"),
     path = require("path"),
     fs = require("fs");
+var port = process.env.PORT || 3000;
+	app.listen(port);
+
 
 http.createServer(function(request, response) {
     var urlPath = request.url;
@@ -32,6 +35,6 @@ http.createServer(function(request, response) {
             response.end(file, "binary");
         });
     });
-	}).listen(8080);
+	}).listen(port);
 
 console.log("Server running at "+process.env.port);
