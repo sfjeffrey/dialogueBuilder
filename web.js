@@ -4,7 +4,6 @@ var sys = require("sys"),
     path = require("path"),
     fs = require("fs");
 var port = process.env.PORT || 3000;
-	app.listen(port);
 
 
 http.createServer(function(request, response) {
