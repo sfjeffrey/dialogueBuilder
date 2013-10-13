@@ -2,6 +2,7 @@
   "name": "CT_CiM",
   "version": "0.0.1",
   "description": "App for dialogue maker site",
+  "repository": "https://github.com/sfjeffrey/dialogueBuilder",
   "engines": {
     "node": "0.10.20",
     "npm":  "1.2.30"
