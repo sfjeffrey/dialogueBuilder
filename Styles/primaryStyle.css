@@ -14,6 +14,8 @@ body {
     color: white;
     text-align:center;
     width: 60%;
+    padding-bottom:50px;
+    padding-top:50px;
 }
 a:link {
     color:#00a;
@@ -34,7 +36,9 @@ a:visited {
     left:10%;
     background:#aad;
 }
-
+div {
+    color:white;
+}
 .button {
     color:white;
     display:inline-block;
@@ -54,10 +58,11 @@ a:visited {
     text-align:center;
     position:fixed;
     background-color:#668;
-    top:1em;
-    right:1em;
-    width:5em;
-    height:2em;
+    top:10%;
+    padding : 0.5em;
+    left: 85%;
+    width:4em;
+    height:1em;
     content: "Back";
 }
 .backButton:before {
