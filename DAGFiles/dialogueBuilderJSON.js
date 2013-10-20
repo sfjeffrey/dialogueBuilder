@@ -61,7 +61,7 @@ InnerDAG.prototype.print = function () {
         children += this.children[i].print()+',';
     }
     children = children.slice(0,children.length-1);
-    return '{"text":"'+text+'","illicit":"'+illicit+'","emotion":"'+emotion+'","children":['+children+']}';
+    return '{&#92&quot;text&#92&quot;:&#92&quot;'+text+'&#92&quot;,&#92&quot;illicit&#92&quot;:&#92&quot;'+illicit+'&#92&quot;,&#92&quot;emotion&#92&quot;:&#92&quot;'+emotion+'&#92&quot;,&#92&quot;children&#92&quot;:['+children+']}';
 };
 
 //elimintates the response array if there are no responses, and adds a child for
@@ -211,17 +211,19 @@ var finalizeDAG = function() {
         return;
     }
     $('.output').html('');
-    var output = ('\'{"owner":"'+owner+'","parameters":['+twiKid+','+dasKid+','+appKid+','+
+    var output = ('\'{&#92&quot;owner&#92&quot;:&#92&quot;'+owner+'&#92&quot;,&#92&quot;parameters&#92&quot;:['+twiKid+','+dasKid+','+appKid+','+
         fluKid+","+rarKid+","+maxHealth+","+minHealth+","+maxPsychi+","+minPsychi
-        +","+maxStock+","+minStock+'],"dialogue":'+masterDAG.print()+'}\'');
+        +","+maxStock+","+minStock+'],&#92&quot;dialogue&#92&quot;:'+masterDAG.print()+'}\'');
     $('.output').append(output);
     masterDAG = new InnerDAG('greeting');
     
 };
 
 var parseSymbols = function (string) {
-    var output = string.replace(/</g,'&lt;');
-    return output;
+    string = string.replace(/</g,'&lt;');
+    string = string.replace(/"/g,'&#92&#92&#92&quot;');
+    string = string.replace(/'/g,'&#92&#92&#92&#39;');
+    return string;
 };
 //****************************************************************************
 //document ready function

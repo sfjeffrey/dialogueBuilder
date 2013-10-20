@@ -1,14 +1,46 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="Styles/primaryStyle.css">
+<HTML>
+<head>
+<link rel="stylesheet" type="text/css" href="Styles/primaryStyle.css">
+<link rel="stylesheet" type="text/css" href="Styles/dialogueStyle.css">
         <title>CT CiM: Dialogue Demo</title>
-        
-    </head>
-    <body style="top:0;">
-    <a href="index2.html">
+<script type="application/javascript">
+    String.prototype.contains = function(string) {
+        if (this.search(string) >= 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+</script>
+    <script type="application/javascript" src="DAGFiles/jQuery.js"                       ></script>
+    <script type="application/javascript" src="dialogueDemo/stageControl.js"     ></script>
+    <script type="application/javascript" src="dialogueDemo/dialogueScript.js"     ></script>
+
+</head>
+
+<body style="top:0;">
+
+<a href="index2.html">
     <div class="backButton"></div>
     </a>
-        <div style="font-size:100px;">:D</div>
-    </body>
+<p style="font-size:12px;left:2%;position:fixed;width:15%;">
+There will be a fully functional flash based dialogue demo. But I don't really
+like the idea of just having a blank page here in the mean time. So this is the dialogue engine
+    strait out of the browser version of the game.<br>
+    Put the code exported from the dialogue maker into the text box at the bottom.
+    Then press the start button. Refresh the page to restart it. Don't forget to 
+    save your conversation somewhere more reliable than your clipboard!
+</p>
+
     
+    <div class="textBox" style="color:black;"></div>
+    <div class="buttonBox"></div>
+    <textarea class="json" placeholder="Code goes here."></textarea>
+
+
+
+</body>
+
+
 </html>

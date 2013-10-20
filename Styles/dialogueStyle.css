@@ -1,0 +1,68 @@
+body {
+    font: normal 10px sans-serif;
+    width:600px;
+}
+div {
+    background: #eef;
+}
+
+.textBox {
+    font-size:12px;
+    text-align:left;
+    color: black;
+    border: inset 2px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.buttonBox {
+    border: inset 2px;
+    width: 85px;
+    height: 500px;
+    position: absolute;
+    top: 5px;
+    left: 515px;
+}
+.button {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    user-select: none;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: #557;
+    border: outset 1px;
+    width: 73px;
+    height: 25px;
+    margin: 5px;
+    margin-bottom: 2.5px;
+    border-radius:9px;
+}
+.xButton {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    user-select: none;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: gray;
+    border: outset 1px;
+    width: 12px;
+    height: 12px;
+    content: 'X';
+    float: right;
+}
+.json {
+    background-color:#eef;
+    position:relative;
+    top: 465px;
+    width:600px;
+}
+pinky {
+    color : #e0c;
+    display: block;
+}
