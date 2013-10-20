@@ -211,9 +211,9 @@ var finalizeDAG = function() {
         return;
     }
     $('.output').html('');
-    var output = ('\'{&#92&quot;owner&#92&quot;:&#92&quot;'+owner+'&#92&quot;,&#92&quot;parameters&#92&quot;:['+twiKid+','+dasKid+','+appKid+','+
+    var output = ('{&#92&quot;owner&#92&quot;:&#92&quot;'+owner+'&#92&quot;,&#92&quot;parameters&#92&quot;:['+twiKid+','+dasKid+','+appKid+','+
         fluKid+","+rarKid+","+maxHealth+","+minHealth+","+maxPsychi+","+minPsychi
-        +","+maxStock+","+minStock+'],&#92&quot;dialogue&#92&quot;:'+masterDAG.print()+'}\'');
+        +","+maxStock+","+minStock+'],&#92&quot;dialogue&#92&quot;:'+masterDAG.print()+'}');
     $('.output').append(output);
     masterDAG = new InnerDAG('greeting');
     
